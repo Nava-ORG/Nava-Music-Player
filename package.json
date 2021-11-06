@@ -1,0 +1,37 @@
+{
+  "name": "nava-music-player",
+  "productName": "Nava Music Player",
+  "description": "First iranian music player with DisocrdRPC",
+  "homepage": "https://github.com/Nava-ORG/Nava-Music-Player#readme",
+  "url": "https://github.com/Nava-ORG/Nava-Music-Player",
+  "version": "0.0.1",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "keywords": [],
+  "author": "hadi.azt",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "check-internet-connected": "^2.0.5",
+    "discord-rpc": "^4.0.1",
+    "electron": "^9.1.2",
+    "electron-window-state": "^5.0.3",
+    "jquery": "^3.5.1",
+    "jsmediatags": "^3.9.3",
+    "vazir-font": "^26.0.2"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "electron-packager": "^15.4.0"
+  },
+  "funding": {
+    "type": "idpay",
+    "url": "https://idpay.ir/nava-donate"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/npm/Nava-ORG-Music-Player"
+  }
+}
