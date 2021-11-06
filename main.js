@@ -1,8 +1,6 @@
 const { app, BrowserWindow, Menu, Tray, ipcMain } = require('electron')
 const windowSateKeeper = require('electron-window-state')
 let mainWin
-let tray
-let status = 'پخش'
 
 const createWindow = () => {
 	let stateMainWindow = windowSateKeeper({
@@ -10,7 +8,6 @@ const createWindow = () => {
 		defaultHeight: 650,
 	})
 	mainWin = new BrowserWindow({
-		icon: './static/images/icon.png',
 		width: stateMainWindow.width,
 		height: stateMainWindow.height,
 		'minWidth': stateMainWindow.width,
@@ -29,33 +26,10 @@ const createWindow = () => {
 
 }
 
-const setContext = () => {
-	const contextMenu = Menu.buildFromTemplate([
-		{
-			label: status,
-			click: () => mainWin.webContents.send('controller', 'play'),
-		},
-		{
-			label: 'بعدی',
-			click: () => mainWin.webContents.send('controller', 'next'),
-		},
-		{
-			label: 'قبلی',
-			click: () => mainWin.webContents.send('controller', 'prev'),
-		},
-	])
-	tray.setContextMenu(contextMenu)
-}
 
-ipcMain.on('setStatus', (e, arg) => {
-	status = arg
-	setContext()
-})
 
-const createTray = () => {
-	tray = new Tray('./static/images/icon.png')
-	setContext()
-}
+
+
 
 const createMenu = () => {
 	const template = [
@@ -75,7 +49,6 @@ const createMenu = () => {
 
 app.on('ready', () => {
 	createWindow()
-	createTray()
 	createMenu()
 })
 
