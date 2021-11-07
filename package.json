@@ -9,8 +9,7 @@
   "author": "nava",
   "scripts": {
     "start": "electron .",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "package": "npx electron-packager ./ Nava-Music-Player --platform=all --arch=all --icon=./app/img/icon.png"
   },
   "url": "https://github.com/Nava-ORG/Nava-Music-Player",
   "funding": {
