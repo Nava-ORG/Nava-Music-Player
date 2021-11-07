@@ -119,6 +119,7 @@
 }
 
 #controller img {
+    border-radius: 15px;
     width: 50px;
 }
 
