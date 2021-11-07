@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fa" style="overflow: hidden">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Nava Music Player</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="../layout/player.css" />
+</head>
+
+<body class="text-white text-center rtl" style="background: var(--primary-secondary)">
+
+<div class="top"></div>
+
+<div class="tabBar">
+    <button id='cl' onClick="window.close();" class='cl'></button>
+    <button id='minimize' onClick="maximize()" class='minimize'></button>
+    <button id='window' onClick="minimize()" class='window'></button>
+</div>
+
+<div class="container-fluid">
+    <div class="row min-vh-100">
+        <div class="col-md-4 col-sm-6 p-0" id="drop_area">
+            <div class="container-fluid">
+                <div class="row p-5" style="margin-top: 30px">
+                    <div class="col">
+                        <i class="fa fa-plus h1"></i>
+                        <span class="d-block">بکشید و رها کنید</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" style="min-height: 550px; max-height: 900px; overflow: scroll; overflow-x: hidden; margin-top: 60px; padding-right: 20px;">
+            <div class="pb-3" id="show_list"></div>
+        </div>
+    </div>
+    <div id="controller" class="row fixed-bottom m-0 p-0" dir="ltr">
+        <div class="col">
+            <div class="row text-left" style="margin: 10px;">
+                <div style="display: flex; align-items: center; justify-content: center">
+                    <div style="display: flex; align-items: center; justify-content: center">
+                        <img id="player_cover" src="../img/cover.jpg" alt="cover" />
+                    </div>
+
+                    <div style="margin-left: 20px;">
+                        <div class="row" id="player_title">Title</div>
+                        <div class="row small">
+                            <span id="player_artist" style="padding-left: 0">Artist</span>
+                            -
+                            <span id="player_year">Year</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col p-0">
+                    <div style="display: flex; align-items: center; margin-top: 10px;justify-content: center">
+                        <button id="btn_prev" class="btn btn-sm">
+                            <i class="h3 fas fa-backward"></i>
+                        </button>
+                        <button id="btn_play" class="btn btn-sm">
+                            <i class="h3 fas fa-play"></i>
+                        </button>
+                        <button id="btn_next" class="btn btn-sm">
+                            <i class="h3 fas fa-forward"></i>
+                        </button>
+                    </div>
+
+                    <div class="slideContainer">
+                        <label for="progress"></label>
+                        <input type="range" min="1" max="100" value="0" class="slider" id="progress">
+                    </div>
+                </div>
+                <div style="max-width: 200px" class="col pt-2 text-right">
+                    <span id="accName"></span>
+                </div>
+            </div>
+            <audio id="player" src=""></audio>
+        </div>
+    </div>
+</div>
+<script src="../lib/player.container.js"></script>
+
+</body>
+
+</html>

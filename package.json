@@ -1,37 +1,70 @@
 {
   "name": "nava-music-player",
-  "productName": "Nava Music Player",
-  "description": "First iranian music player with DisocrdRPC",
+  "productName": "Nava-Music-Player",
+  "executableName": "Nava-Music-Player",
+  "description": "First iranian video music with Disocrd-RPC",
   "homepage": "https://github.com/Nava-ORG/Nava-Music-Player#readme",
-  "url": "https://github.com/Nava-ORG/Nava-Music-Player",
-  "version": "0.0.1",
-  "main": "main.js",
+  "version": "1.0.0",
+  "main": "./app/app.service.js",
+  "author": "nava",
   "scripts": {
-    "start": "electron main.js"
+    "start": "electron .",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
-  "keywords": [],
-  "author": "hadi.azt",
-  "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^4.5.2",
-    "check-internet-connected": "^2.0.5",
-    "discord-rpc": "^4.0.1",
-    "electron": "^9.1.2",
-    "electron-window-state": "^5.0.3",
-    "jquery": "^3.5.1",
-    "jsmediatags": "^3.9.3",
-    "vazir-font": "^26.0.2"
-  },
-  "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.14.0",
-    "electron-packager": "^15.4.0"
-  },
+  "url": "https://github.com/Nava-ORG/Nava-Music-Player",
   "funding": {
     "type": "idpay",
     "url": "https://idpay.ir/nava-donate"
   },
   "repository": {
     "type": "github",
-    "url": "https://github.com/npm/Nava-ORG-Music-Player"
+    "url": "https://github.com/npm/Nava-ORG/Nava-Music-Player"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bootstrap": "^5.1.3",
+    "check-internet-connected": "^2.0.5",
+    "discord-rpc": "^4.0.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "jsmediatags": "^3.9.7"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/maker-zip": "^6.0.0-beta.61",
+    "electron": "^9.1.2"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "name": "Nava-Music-Player",
+        "executableName": "Nava-Music-Player"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "nava_music_player"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
   }
 }
